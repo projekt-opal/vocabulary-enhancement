@@ -1,0 +1,6 @@
+# Source:
+# https://github.com/apache/jena/blob/d11b5c8ea739068abd1ab53fc1360e536d6ea471/jena-core/src/main/java/org/apache/jena/vocabulary/DCAT.java
+public static final Resource Catalog = m.createResource(NS + "Catalog");
+public static final Resource CatalogRecord = m.createResource(NS + "CatalogRecord");
+public static final Resource Dataset = m.createResource(NS + "Dataset");
+public static final Resource Distribution = m.createResource(NS + "Distribution");

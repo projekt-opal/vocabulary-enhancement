@@ -1,0 +1,14 @@
+# Source:
+# https://github.com/apache/jena/blob/d11b5c8ea739068abd1ab53fc1360e536d6ea471/jena-core/src/main/java/org/apache/jena/vocabulary/DCAT.java
+public static final Property accessURL = m.createProperty(NS + "accessURL");
+public static final Property byteSize = m.createProperty(NS + "byteSize");
+public static final Property contactPoint = m.createProperty(NS + "contactPoint");
+public static final Property dataset = m.createProperty(NS + "dataset");
+public static final Property distribution = m.createProperty(NS + "distribution");
+public static final Property downloadURL = m.createProperty(NS + "downloadURL");
+public static final Property keyword = m.createProperty(NS + "keyword");	
+public static final Property landingPage = m.createProperty(NS + "landingPage");
+public static final Property mediaType = m.createProperty(NS + "mediaType");
+public static final Property record = m.createProperty(NS + "record");
+public static final Property theme = m.createProperty(NS + "theme");
+public static final Property themeTaxonomy = m.createProperty(NS + "themeTaxonomy");

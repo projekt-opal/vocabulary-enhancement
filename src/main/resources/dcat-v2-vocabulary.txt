@@ -1,0 +1,89 @@
+# Source:
+# DCAT Version 2 Implementation Report
+# Summary of proposed revisions
+# https://w3c.github.io/dxwg/dcat-implementation-report/#proposed-revisions
+# Referenced at:
+# Data Catalog Vocabulary (DCAT) - Version 2
+# https://www.w3.org/TR/2019/PR-vocab-dcat-2-20191119/
+# ID	Class	Property	Inherited from
+REV1	dcat:Catalog	dct:hasPart	
+REV2	dcat:Catalog	dcat:service	
+REV3	dcat:Catalog	dcat:catalog	
+REV4	dcat:Catalog	dcat:distribution	dcat:Dataset
+REV5	dcat:Catalog	dct:accrualPeriodicity	dcat:Dataset
+REV6	dcat:Catalog	dct:temporal	dcat:Dataset
+REV7	dcat:Catalog	prov:wasGeneratedBy	dcat:Dataset
+REV8	dcat:Catalog	dct:accessRights	dcat:Resource
+REV9	dcat:Catalog	dct:conformsTo	dcat:Resource
+REV10	dcat:Catalog	dcat:contactPoint	dcat:Resource
+REV11	dcat:Catalog	dct:creator	dcat:Resource
+REV12	dcat:Catalog	odrl:hasPolicy	dcat:Resource
+REV13	dcat:Catalog	dct:identifier	dcat:Resource
+REV14	dcat:Catalog	dcat:keyword	dcat:Resource
+REV15	dcat:Catalog	dcat:landingPage	dcat:Resource
+REV16	dcat:Catalog	dct:relation	dcat:Resource
+REV17	dcat:Catalog	dcat:qualifiedRelation	dcat:Resource
+REV18	dcat:Catalog	dcat:theme	dcat:Resource
+REV19	dcat:Catalog	dct:type	dcat:Resource
+REV20	dcat:Catalog	prov:qualifiedAttribution	dcat:Resource
+REV21	dcat:Catalog	dct:isReferencedBy	dcat:Resource
+REV22	dcat:CatalogRecord	dct:conformsTo	dcat:Resource
+REV23	dcat:Dataset	dcat:spatialResolutionInMeters	
+REV24	dcat:Dataset	dcat:temporalResolution	
+REV25	dcat:Dataset	prov:wasGeneratedBy	
+REV26	dcat:Dataset	dct:accessRights	dcat:Resource
+REV27	dcat:Dataset	dct:conformsTo	dcat:Resource
+REV28	dcat:Dataset	dct:creator	dcat:Resource
+REV29	dcat:Dataset	odrl:hasPolicy	dcat:Resource
+REV30	dcat:Dataset	dct:license	dcat:Resource
+REV31	dcat:Dataset	dct:relation	dcat:Resource
+REV32	dcat:Dataset	dct:rights	dcat:Resource
+REV33	dcat:Dataset	dcat:qualifiedRelation	dcat:Resource
+REV34	dcat:Dataset	dct:type	dcat:Resource
+REV35	dcat:Dataset	prov:qualifiedAttribution	dcat:Resource
+REV36	dcat:Dataset	dct:isReferencedBy	dcat:Resource
+REV37	dcat:Distribution	dct:accessRights	dcat:Resource
+REV38	dcat:Distribution	dcat:accessService	
+REV39	dcat:Distribution	dct:conformsTo	
+REV40	dcat:Distribution	odrl:hasPolicy	
+REV41	dcat:Distribution	dcat:compressFormat	
+REV42	dcat:Distribution	dcat:packageFormat	
+REV43	dcat:Distribution	dcat:spatialResolutionInMeters	
+REV44	dcat:Distribution	dcat:temporalResolution	
+REV45	dcat:DataService		
+REV46	dcat:DataService	dcat:endpointDescription	
+REV47	dcat:DataService	dcat:endpointURL	
+REV48	dcat:DataService	dct:license	dcat:Resource
+REV49	dcat:DataService	dct:accessRights	dcat:Resource
+REV50	dcat:DataService	dcat:servesDataset	
+REV51	dcat:DataService	dct:conformsTo	dcat:Resource
+REV52	dcat:DataService	dcat:contactPoint	dcat:Resource
+REV53	dcat:DataService	dct:creator	dcat:Resource
+REV54	dcat:DataService	dct:description	dcat:Resource
+REV55	dcat:DataService	odrl:hasPolicy	dcat:Resource
+REV56	dcat:DataService	dct:identifier	dcat:Resource
+REV57	dcat:DataService	dcat:keyword	dcat:Resource
+REV58	dcat:DataService	dcat:landingPage	dcat:Resource
+REV59	dcat:DataService	dct:language	dcat:Resource
+REV60	dcat:DataService	dct:relation	dcat:Resource
+REV61	dcat:DataService	dct:rights	dcat:Resource
+REV62	dcat:DataService	dcat:qualifiedRelation	dcat:Resource
+REV63	dcat:DataService	dct:publisher	dcat:Resource
+REV64	dcat:DataService	dct:issued	dcat:Resource
+REV65	dcat:DataService	dcat:theme	dcat:Resource
+REV66	dcat:DataService	dct:title	dcat:Resource
+REV67	dcat:DataService	dct:type	dcat:Resource
+REV68	dcat:DataService	dct:modified	dcat:Resource
+REV69	dcat:DataService	prov:qualifiedAttribution	dcat:Resource
+REV70	dcat:DataService	dct:isReferencedBy	dcat:Resource
+REV71	dcat:Relationship		
+REV72	dcat:Relationship	dct:relation	
+REV73	dcat:Relationship	dcat:hadRole	
+REV74	dcat:Role		
+REV75	dct:PeriodOfTime	dcat:startDate	
+REV76	dct:PeriodOfTime	dcat:endDate	
+REV77	dct:PeriodOfTime	time:hasBeginning	
+REV78	dct:PeriodOfTime	time:hasEnd	
+REV79	dct:Location	locn:geometry	
+REV80	dct:Location	dcat:bbox	
+REV81	dct:Location	dcat:centroid	

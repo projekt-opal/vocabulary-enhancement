@@ -1,0 +1,54 @@
+# Source:
+# DCAT Implementations
+# https://www.w3.org/2011/gld/wiki/DCAT_Implementations#Summary_of_terms_usage
+# Referenced at:
+# Data Catalog Vocabulary (DCAT)
+# https://www.w3.org/TR/2014/REC-vocab-dcat-20140116/
+dcat:Catalog	Y		Y	Y		Y	Y	Y		Y		Y	Y
+dct:title	Y		Y	Y		Y	Y	Y		Y		Y	Y
+dct:description	Y		Y	Y	Y		Y			Y		Y	Y
+dct:issued	Y					Y						Y	
+dct:modified	Y					Y		Y				Y	
+dct:language	Y					Y				Y			
+dct:license	Y		Y	Y								Y	
+dct:rights	(Y)		(Y)	(Y)								(Y)	
+dct:spatial	Y			Y		Y				Y			
+foaf:homepage	Y		Y	Y		Y	Y	Y		Y		Y	Y
+dcat:dataset	Y		Y	Y		Y		Y		Y		Y	Y
+dcat:record	Y					Y				Y			Y
+dct:publisher	Y		Y	Y		Y	Y			Y			Y
+dcat:themeTaxonomy				Y		Y				Y			
+dcat:Dataset	Y	Y	Y	Y	Y	Y	Y	Y	Y	Y	Y	Y	Y
+dct:title	Y	Y	Y	Y	Y	Y	Y	Y	Y	Y	Y	Y	Y
+dct:description	Y	Y	Y	Y	Y	Y	Y	Y	Y	Y	Y	Y	
+dct:issued	Y	Y	Y	Y	Y	Y		Y		Y	Y	Y	
+dct:modified	Y			Y		Y		Y		Y		Y	
+dct:identifier	Y	Y	Y	Y		Y		Y	Y	Y		Y	Y
+dcat:keyword	Y		Y	Y	Y	Y			Y	Y		Y	Y
+dct:language	Y	Y				Y				Y			
+dcat:contactPoint	Y					Y							
+dct:temporal	Y					Y				Y			
+dct:spatial	Y	Y	Y	Y						Y			Y
+dct:accrualPeriodicity	Y		Y	Y						Y	Y		Y
+dcat:theme	Y	Y	Y	Y	Y	Y				Y	Y		Y
+dcat:landingPage						Y				Y	Y		
+dct:publisher	Y	Y	Y	Y	Y	Y	Y			Y	Y	Y	
+dcat:distribution	Y	Y	Y	Y	Y	Y			Y	Y	Y	Y	Y
+dcat:CatalogRecord	Y					Y				Y			Y
+dct:title	Y					Y				Y			
+dct:description	Y					Y				Y			
+dct:issued	Y					Y							Y
+dct:modified	Y					Y							Y
+foaf:primaryTopic	Y					Y				Y			Y
+dcat:Distribution	Y	Y	Y	Y	Y	Y			Y	Y	Y	Y	Y
+dct:title	Y					Y			Y	Y		Y	Y
+dct:description	Y					Y			Y	Y		Y	
+dct:issued						Y							
+dct:modified						Y							
+dct:license	Y									Y		Y	
+dct:rights	(Y)								Y	Y			
+dct:format		Y	Y	Y	Y	Y			Y	Y		Y	Y
+dcat:byteSize		(D)			(D)						Y		
+dcat:mediaType	Y					Y				Y	Y	Y	
+dcat:accessURL	Y	Y			Y	Y			Y	Y		Y	Y
+dcat:downloadURL	Y					Y				Y	Y	Y	
