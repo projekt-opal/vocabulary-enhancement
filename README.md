@@ -28,11 +28,11 @@ dcat:DataService, dcat:Relationship, dcat:Role, dct:Location, dct:PeriodOfTime
 
 dcat:accessService, dcat:bbox, dcat:catalog, dcat:centroid, dcat:compressFormat, dcat:endDate, dcat:endpointDescription, dcat:endpointURL, dcat:hadRole, dcat:packageFormat, dcat:qualifiedRelation, dcat:servesDataset, dcat:service, dcat:spatialResolutionInMeters, dcat:startDate, dcat:temporalResolution, dct:accessRights, dct:conformsTo, dct:creator, dct:hasPart, dct:isReferencedBy, dct:relation, dct:type, locn:geometry, odrl:hasPolicy, prov:qualifiedAttribution, prov:wasGeneratedBy, time:hasBeginning, time:hasEnd
 
-### Additional classes in namespace dcat (To be added in Apache Jena)
+### Additional classes in namespace dcat (To be added to Apache Jena)
 
 dcat:DataService, dcat:Relationship, dcat:Role
 
-### Additional properties in namespace dcat (To be added in Apache Jena)
+### Additional properties in namespace dcat (To be added to Apache Jena)
 
 dcat:accessService, dcat:bbox, dcat:catalog, dcat:centroid, dcat:compressFormat, dcat:endDate, dcat:endpointDescription, dcat:endpointURL, dcat:hadRole, dcat:packageFormat, dcat:qualifiedRelation, dcat:servesDataset, dcat:service, dcat:spatialResolutionInMeters, dcat:startDate, dcat:temporalResolution
 
