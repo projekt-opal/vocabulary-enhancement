@@ -160,10 +160,16 @@ public class Main {
 		List<String> addProp = propDcat2Rdf;
 		addProp.removeAll(propDcat_Dcat2notDcat1);
 		addProp.removeAll(propFuseki);
+		List<String> checkCls = clsFuseki;
+		checkCls.removeAll(clsFuseki);
+		List<String> checkProp = propFuseki;
+		checkCls.removeAll(propFuseki);
 		if (Boolean.TRUE) {
 			System.out.println("Double check");
 			addCls.forEach(System.out::println);
 			addProp.forEach(System.out::println);
+			checkCls.forEach(System.out::println);
+			checkCls.forEach(System.out::println);
 			System.out.println();
 		}
 		// Correction
