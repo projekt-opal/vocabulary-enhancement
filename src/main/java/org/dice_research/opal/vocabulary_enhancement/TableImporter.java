@@ -17,11 +17,11 @@ import org.apache.commons.io.IOUtils;
  *
  * @author Adrian Wilke
  */
-public abstract class Importer {
+public abstract class TableImporter {
 
 	public static List<List<String>> splitLines(String resourceName, int beginIndex, int endIndex) {
 		try {
-			return splitLines(new File(Importer.class.getClassLoader().getResource(resourceName).toURI()),
+			return splitLines(new File(TableImporter.class.getClassLoader().getResource(resourceName).toURI()),
 					beginIndex, endIndex);
 		} catch (URISyntaxException e) {
 			throw new RuntimeException(e);

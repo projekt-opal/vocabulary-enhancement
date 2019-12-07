@@ -1,12 +1,17 @@
 package org.dice_research.opal.vocabulary_enhancement;
 
+import java.net.URISyntaxException;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Set;
+import java.util.SortedSet;
 import java.util.TreeSet;
+
+import org.apache.jena.vocabulary.DCAT;
 
 /**
  * Vocabulary Comprison of:
@@ -23,22 +28,33 @@ import java.util.TreeSet;
  */
 public class Main {
 
+//	private final static String DCAT_PREFIX = "http://www.w3.org/ns/dcat";
+
+	private RdfImporter dcat2Rdf;
+
 	public static void main(String[] args) throws Exception {
+
+		Main main = new Main();
 
 		// Import
 
-		List<String> dcat1 = extractElement(Importer.splitLines(Resources.DCAT_1, 0, 0), 0);
+		List<String> dcat1 = extractElement(TableImporter.splitLines(Resources.DCAT_1, 0, 0), 0);
 		Collections.sort(dcat1);
 		List<String> clsDcat1 = filterByCase(dcat1, true);
 		List<String> propDcat1 = filterByCase(dcat1, false);
 
-		List<String> clsDcat2 = removeDuplicates(extractElement(Importer.splitLines(Resources.DCAT_2, 1, 1), 0));
-		List<String> propDcat2 = removeDuplicates(extractElement(Importer.splitLines(Resources.DCAT_2, 2, 2), 0));
+		List<String> clsDcat2 = removeDuplicates(extractElement(TableImporter.splitLines(Resources.DCAT_2, 1, 1), 0));
+		List<String> propDcat2 = removeDuplicates(extractElement(TableImporter.splitLines(Resources.DCAT_2, 2, 2), 0));
 
 		List<String> propFuseki = extractFusekiDcatProperties(
-				extractElement(Importer.splitLines(Resources.FUSEKI_DCAT_PROPERTIES, 8, 8), 0));
+				extractElement(TableImporter.splitLines(Resources.FUSEKI_DCAT_PROPERTIES, 8, 8), 0));
 		List<String> clsFuseki = extractFusekiDcatProperties(
-				extractElement(Importer.splitLines(Resources.FUSEKI_DCAT_CLASSES, 8, 8), 0));
+				extractElement(TableImporter.splitLines(Resources.FUSEKI_DCAT_CLASSES, 8, 8), 0));
+
+		// RDF import
+
+		List<String> clsDcat2Rdf = Main.replacePref(main.getDcat2ClassesFromRdf(), DCAT.NS, "dcat:");
+		List<String> propDcat2Rdf = Main.replacePref(main.getDcat2PropertiesFromRdf(), DCAT.NS, "dcat:");
 
 		if (Boolean.TRUE) {
 			System.out.println("Imported:");
@@ -70,8 +86,6 @@ public class Main {
 			System.out.println("Properties: " + prop_Dcat2notDcat1);
 			System.out.println();
 		}
-		
-		
 
 		// Filter properties
 		List<String> propDcat1PreDcat = removeDuplicates(filterByPrefix(propDcat1, "dcat:"));
@@ -139,6 +153,23 @@ public class Main {
 			System.out.println();
 		}
 
+		// Double check
+		List<String> addCls = clsDcat2Rdf;
+		addCls.removeAll(clsDcat_Dcat2notDcat1);
+		addCls.removeAll(clsFuseki);
+		List<String> addProp = propDcat2Rdf;
+		addProp.removeAll(propDcat_Dcat2notDcat1);
+		addProp.removeAll(propFuseki);
+		if (Boolean.TRUE) {
+			System.out.println("Double check");
+			addCls.forEach(System.out::println);
+			addProp.forEach(System.out::println);
+			System.out.println();
+		}
+		// Correction
+		propDcat_Dcat2tnotFuseki.addAll(addProp);
+		clsDcat_Dcat2tnotFuseki.addAll(addCls);
+
 		// Code
 		System.out.println("Fuseki code:");
 		Collections.sort(propDcat_Dcat2tnotFuseki);
@@ -150,6 +181,10 @@ public class Main {
 		for (String string : clsDcat_Dcat2tnotFuseki) {
 			fusekiCode(string, false);
 		}
+		System.out.println();
+		for (String string : addProp) {
+			fusekiCode(string, true);
+		}
 
 	}
 
@@ -159,12 +194,21 @@ public class Main {
 			label = label.substring(index + 1);
 		}
 		String codeClass = "\tpublic static final Resource " + label + " = m.createResource(NS + \"" + label + "\");";
-		String codeProperty = "\tpublic static final Property " + label + " = m.createProperty(NS + \"" + "\");";
+		String codeProperty = "\tpublic static final Property " + label + " = m.createProperty(NS + \"" + label
+				+ "\");";
 		if (isProperty) {
 			System.out.println(codeProperty);
 		} else {
 			System.out.println(codeClass);
 		}
+	}
+
+	protected static List<String> replacePref(Collection<String> collection, String prefix, String replacement) {
+		List<String> list = new ArrayList<>();
+		for (String string : collection) {
+			list.add(string.replaceFirst(prefix, replacement));
+		}
+		return list;
 	}
 
 	protected static List<String> filterByPrefix(List<String> list, String prefix) {
@@ -226,5 +270,19 @@ public class Main {
 
 	protected static List<String> removeDuplicates(List<String> list) {
 		return new ArrayList<String>(new TreeSet<String>(list));
+	}
+
+	public SortedSet<String> getDcat2ClassesFromRdf() throws URISyntaxException {
+		if (dcat2Rdf == null) {
+			dcat2Rdf = new RdfImporter().loadTurtle(Resources.DCAT_2_RDF);
+		}
+		return dcat2Rdf.filterUrisByPrefixAndCase(DCAT.NS, true);
+	}
+
+	public SortedSet<String> getDcat2PropertiesFromRdf() throws URISyntaxException {
+		if (dcat2Rdf == null) {
+			dcat2Rdf = new RdfImporter().loadTurtle(Resources.DCAT_2_RDF);
+		}
+		return dcat2Rdf.filterUrisByPrefixAndCase(DCAT.NS, false);
 	}
 }

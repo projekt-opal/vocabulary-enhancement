@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>org.dice-research.opal</groupId>
 	<artifactId>vocabulary-enhancement</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<name>opal-vocabulary-enhancement</name>
 
 	<properties>
@@ -22,5 +22,25 @@
 			<version>2.6</version>
 		</dependency>
 
+		<dependency>
+			<groupId>org.dice-research.opal</groupId>
+			<artifactId>common</artifactId>
+			<version>[1,2)</version>
+		</dependency>
+
 	</dependencies>
+
+	<repositories>
+		<repository>
+			<id>maven.aksw.internal</id>
+			<name>AKSW Repository</name>
+			<url>http://maven.aksw.org/archiva/repository/internal</url>
+		</repository>
+		<repository>
+			<id>maven.aksw.snapshots</id>
+			<name>AKSW Snapshot Repository</name>
+			<url>http://maven.aksw.org/archiva/repository/snapshots</url>
+		</repository>
+	</repositories>
+
 </project>

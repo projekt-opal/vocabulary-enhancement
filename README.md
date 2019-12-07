@@ -22,7 +22,7 @@ dcat:accessURL, dcat:byteSize, dcat:contactPoint, dcat:dataset, dcat:distributio
 
 ### Additional classes in DCAT 2 revisions
 
-dcat:DataService, dcat:Relationship, dcat:Role, dct:Location, dct:PeriodOfTime
+dcat:DataService, dcat:Relationship, dcat:Resource, dcat:Role, dct:Location, dct:PeriodOfTime
 
 ### Additional properties in DCAT 2 revisions
 
@@ -30,7 +30,7 @@ dcat:accessService, dcat:bbox, dcat:catalog, dcat:centroid, dcat:compressFormat,
 
 ### Additional classes in namespace dcat (To be added in Apache Jena)
 
-dcat:DataService, dcat:Relationship, dcat:Role
+dcat:DataService, dcat:Relationship, dcat:Resource, dcat:Role
 
 ### Additional properties in namespace dcat (To be added in Apache Jena)
 
