@@ -22,7 +22,7 @@ public class RdfImporter {
 	 * Extracts and prints URIs with {@link DCAT} prefixes from
 	 * {@link Resources#DCAT_2_RDF}.
 	 */
-	public static void main(String[] args) throws URISyntaxException {
+	public static void main(String[] args) {
 		RdfImporter dcat2Rdf = new RdfImporter().loadTurtle(Resources.DCAT_2_RDF);
 		SortedSet<String> dcatClasses = dcat2Rdf.filterUrisByPrefixAndCase(DCAT.NS, true);
 		SortedSet<String> dcatProperties = dcat2Rdf.filterUrisByPrefixAndCase(DCAT.NS, false);
@@ -39,8 +39,12 @@ public class RdfImporter {
 
 	private Model model;
 
-	public RdfImporter loadTurtle(String resourceName) throws URISyntaxException {
-		loadTurtle(RdfImporter.class.getClassLoader().getResource(resourceName).toURI());
+	public RdfImporter loadTurtle(String resourceName) {
+		try {
+			loadTurtle(RdfImporter.class.getClassLoader().getResource(resourceName).toURI());
+		} catch (URISyntaxException e) {
+			throw new RuntimeException(e);
+		}
 		return this;
 	}
 

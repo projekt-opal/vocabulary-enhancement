@@ -1,6 +1,5 @@
 package org.dice_research.opal.vocabulary_enhancement;
 
-import java.net.URISyntaxException;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Collections;
@@ -163,13 +162,13 @@ public class Main {
 		List<String> checkCls = clsFuseki;
 		checkCls.removeAll(clsFuseki);
 		List<String> checkProp = propFuseki;
-		checkCls.removeAll(propFuseki);
+		checkProp.removeAll(propFuseki);
 		if (Boolean.TRUE) {
 			System.out.println("Double check");
 			addCls.forEach(System.out::println);
 			addProp.forEach(System.out::println);
 			checkCls.forEach(System.out::println);
-			checkCls.forEach(System.out::println);
+			checkProp.forEach(System.out::println);
 			System.out.println();
 		}
 		// Correction
@@ -278,14 +277,14 @@ public class Main {
 		return new ArrayList<String>(new TreeSet<String>(list));
 	}
 
-	public SortedSet<String> getDcat2ClassesFromRdf() throws URISyntaxException {
+	public SortedSet<String> getDcat2ClassesFromRdf() {
 		if (dcat2Rdf == null) {
 			dcat2Rdf = new RdfImporter().loadTurtle(Resources.DCAT_2_RDF);
 		}
 		return dcat2Rdf.filterUrisByPrefixAndCase(DCAT.NS, true);
 	}
 
-	public SortedSet<String> getDcat2PropertiesFromRdf() throws URISyntaxException {
+	public SortedSet<String> getDcat2PropertiesFromRdf() {
 		if (dcat2Rdf == null) {
 			dcat2Rdf = new RdfImporter().loadTurtle(Resources.DCAT_2_RDF);
 		}
