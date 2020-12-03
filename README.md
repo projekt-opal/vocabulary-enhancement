@@ -7,8 +7,9 @@ has been extended to
 on 19 November 2019 as W3C Proposed Recommendation.
 
 In Apache Jena, there is
-[org.apache.jena.vocabulary.DCAT](https://github.com/apache/jena/blob/d11b5c8ea739068abd1ab53fc1360e536d6ea471/jena-core/src/main/java/org/apache/jena/vocabulary/DCAT.java)
+[org.apache.jena.vocabulary.DCAT (2016)](https://github.com/apache/jena/blob/d11b5c8ea739068abd1ab53fc1360e536d6ea471/jena-core/src/main/java/org/apache/jena/vocabulary/DCAT.java)
 containing Resources (classes) and Properties of version 1.
+This has been extended, see [org.apache.jena.vocabulary.DCAT (2019)](https://github.com/apache/jena/blob/596e50b1fc88fb7bdd9ee589abba36d46526eab3/jena-core/src/main/java/org/apache/jena/vocabulary/DCAT.java).
 
 With the code of this repository it has been checked, which identifiers are currently missing.
 
